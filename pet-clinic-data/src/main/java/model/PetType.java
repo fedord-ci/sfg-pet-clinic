@@ -1,4 +1,4 @@
-package pw.springdev.sfgpetclinic.model;
+package model;
 
 /**
  * @author FedorD
