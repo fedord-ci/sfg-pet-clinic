@@ -3,8 +3,7 @@ package pw.springdev.sfgpetclinic.model;
 import java.time.LocalDate;
 
 /**
- * @author FedorD
- * date 2020-03-14
+ * Created by FedorD on 2020-03-14
  */
 public class Pet {
     private PetType petType;
