@@ -10,7 +10,7 @@ import pw.springdev.sfgpetclinic.service.PetTypeService;
  * Created by FedorD on 2020-03-26
  */
 @Service
-public class PetTypeServiceMap extends AbstractMapService<PetType, Long>
+public class PetTypeMapService extends AbstractMapService<PetType, Long>
     implements PetTypeService {
 
     @Override
