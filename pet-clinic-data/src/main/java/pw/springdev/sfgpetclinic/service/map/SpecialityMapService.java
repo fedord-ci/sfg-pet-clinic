@@ -10,7 +10,7 @@ import pw.springdev.sfgpetclinic.service.SpecialtyService;
  * Created by FedorD on 2020-03-26
  */
 @Service
-public class SpecialityServiceMap extends AbstractMapService<Speciality, Long>
+public class SpecialityMapService extends AbstractMapService<Speciality, Long>
     implements SpecialtyService {
     @Override
     public Set<Speciality> findAll() {

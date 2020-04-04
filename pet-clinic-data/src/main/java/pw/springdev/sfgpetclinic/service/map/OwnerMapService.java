@@ -13,13 +13,13 @@ import pw.springdev.sfgpetclinic.service.PetTypeService;
  * Created by FedorD on 2020-03-15
  */
 @Service
-public class OwnerServiceMap extends AbstractMapService<Owner, Long>
+public class OwnerMapService extends AbstractMapService<Owner, Long>
     implements OwnerService {
 
     private final PetTypeService petTypeService;
     private final PetService petService;
 
-    public OwnerServiceMap(PetTypeService petTypeService, PetService petService) {
+    public OwnerMapService(PetTypeService petTypeService, PetService petService) {
         this.petTypeService = petTypeService;
         this.petService = petService;
     }
