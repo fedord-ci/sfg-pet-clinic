@@ -1,5 +1,6 @@
 package pw.springdev.sfgpetclinic.service.map;
 
+import org.springframework.stereotype.Service;
 import pw.springdev.sfgpetclinic.model.Visit;
 import pw.springdev.sfgpetclinic.service.VisitService;
 
@@ -8,6 +9,7 @@ import java.util.Set;
 /**
  * Created by FedorD on 2020-04-05
  */
+@Service
 public class VisitMapService extends AbstractMapService<Visit, Long>
         implements VisitService {
 

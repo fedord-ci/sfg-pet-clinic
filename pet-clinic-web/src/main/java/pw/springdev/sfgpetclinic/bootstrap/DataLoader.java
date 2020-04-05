@@ -1,18 +1,11 @@
 package pw.springdev.sfgpetclinic.bootstrap;
 
-import java.time.LocalDate;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import pw.springdev.sfgpetclinic.model.Owner;
-import pw.springdev.sfgpetclinic.model.Pet;
-import pw.springdev.sfgpetclinic.model.PetType;
-import pw.springdev.sfgpetclinic.model.Speciality;
-import pw.springdev.sfgpetclinic.model.Vet;
-import pw.springdev.sfgpetclinic.service.OwnerService;
-import pw.springdev.sfgpetclinic.service.PetTypeService;
-import pw.springdev.sfgpetclinic.service.SpecialtyService;
-import pw.springdev.sfgpetclinic.service.VetService;
+import pw.springdev.sfgpetclinic.model.*;
+import pw.springdev.sfgpetclinic.service.*;
+
+import java.time.LocalDate;
 
 /**
  * Created by FedorD on 2020-03-23
@@ -24,14 +17,17 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService,
-        PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
+                      SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
+
 
     @Override
     public void run(String... args) throws Exception {
@@ -97,6 +93,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(fionasCat);
 
         ownerService.save(owner2);
+
+        Visit catVisit = new Visit();
+        catVisit.setPet(fionasCat);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+
+        visitService.save(catVisit);
 
         System.out.println("Loaded Owners...");
 
